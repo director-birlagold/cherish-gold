@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.msg {
+	border-radius: 5px 5px 5px 5px;
+}
+div.information {
+	background: url("../img/icons/information.png") no-repeat scroll 10px 11px #E3F2F7;
+	border: 1px solid #B4DBE8;
+}
+div.warning {
+	background: url("../img/icons/exclamation.png") no-repeat scroll 10px 11px #FFFFD3;
+	border: 1px solid #D6D61F;
+}
+div.error {
+	background: url("../img/icons/error.png") no-repeat scroll 10px 11px #FAE8E8;
+	border: 1px solid #FFA2AA;
+}
+div.success {
+	background: url("../img/icons/accept.png") no-repeat scroll 10px 11px #E3FFDE;
+	border: 1px solid #6CD858;
+}
+div.msg {
+	cursor: pointer;
+	margin-bottom: 10px;
+	padding: 9px 30px 9px 37px;
+	/*width:100%;*/
+}
+div.error1 {
+	background: url("../img/error.png") no-repeat scroll 0 9px;
+	color: #D00;
+}
+div.success1 {
+	background: url("../img/accept.png") no-repeat scroll 0 9px;
+	color: #00773C;
+}
+div.msg1 {
+	padding: 10px 0 10px 40px;
+}
+
+div.dismsg{
+	margin:0 auto;
+	position:absolute;
+	top:175px;
+	width:40%;
+	left:30%;
+	z-index:1000;
+}
+div.close{
+	background: url("../img/icons/delete.png") no-repeat;
+    cursor: pointer;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    text-indent: -999999px;
+    top: 14px;
+    width: 16px;
+}

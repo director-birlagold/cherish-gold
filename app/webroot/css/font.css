@@ -1,0 +1,19 @@
+
+@font-face {
+	font-family: 'Conv_HelveticaNeue-CondensedBold';
+	src: url('../fonts/fonts/HelveticaNeue-CondensedBold.eot');
+	src: local('☺'), url('../fonts/fonts/HelveticaNeue-CondensedBold.woff') format('woff'), url('../fonts/fonts/HelveticaNeue-CondensedBold.ttf') format('truetype'), url('../fonts/fonts/HelveticaNeue-CondensedBold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'haettenschweilerregular';
+    src: url('../fonts/hatten-webfont.eot');
+    src: url('../fonts/hatten-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hatten-webfont.woff') format('woff'),
+         url('../fonts/hatten-webfont.ttf') format('truetype'),
+         url('../fonts/hatten-webfont.svg#haettenschweilerregular') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+
+}

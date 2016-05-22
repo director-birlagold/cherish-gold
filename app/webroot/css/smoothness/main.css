@@ -1,0 +1,742 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html, button, input, select, textarea {
+	color:#7f8c8d;
+}
+html {
+	font-size: 1em;
+	line-height: 1.4;
+}
+body {
+	margin: 0;
+	background-color:#F5F8F9;
+	font-family: 'proxima_nova_rgregular';
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+ background: #b3d4fc;
+ text-shadow: none;
+}
+
+::selection {
+ background: #b3d4fc;
+ text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio, canvas, img, video {
+	vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+	resize: vertical;
+}
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   body {
+	margin: 0;
+	background-color:#F5F8F9;
+	font-family: 'proxima_nova_rgregular';
+}
+.top-white-background {
+	background-color:#fff;
+	width:100%;
+	overflow:hidden;
+	border-bottom:1px solid #e8e8e8;
+}
+.container {
+	width:970px;
+	margin:0px auto;
+}
+.inner-logo {
+	width:100px;
+	float:left;
+	border-right:1px solid #e8e8e8;
+	padding:10px 0px;
+	text-align:center !important;
+	margin-top: 1px;
+}
+.top-leads-container {
+	float:left;
+	border-right:1px solid #e8e8e8; /*padding-top: 8px;*/
+	width: 575px;
+}
+.top-search {
+	position:relative;
+}
+.top-search input[type="text"] {
+float: left;
+    margin: 20px 0 0 15px;
+    padding: 5px 30px 4px 10px !important;
+    width: 160px;
+}
+.search-icon {
+	    background: url("../img/search.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    height: 18px;
+    left: 190px;
+    position: absolute;
+    top: 25px;
+    width: 18px;
+}
+.top-leads-container img {
+	left: -28px;
+	position: relative;
+}
+.top-leads-container ul {
+	margin-top:1px;
+}
+.top-leads-container ul li {
+	float: left;
+	padding: 22px 20px;
+}
+.top-leads-container ul li a {
+	padding:0px;
+	font-size:15px;
+}
+.top-leads-container ul li a:hover {
+	color:#38b7ea;
+}
+.top-small-logo {
+	width:130px;
+	float:left;
+	padding:20px 0px;
+	border-right:1px solid #e8e8e8;
+}
+.top-small-logo ul {
+	margin-top:4px;
+}
+.top-small-logo ul li {
+	float:left;
+}
+.top-small-logo ul li a {
+	padding:11px;
+}
+.top-small-picture {
+	float: left;
+	padding: 13px 0;
+	text-align: center !important;
+	width: 80px;
+}
+.top-small-picture img {
+	border-radius:10px;
+}
+/*Main menu*/
+ul.main-menu {
+	width:970px;
+	float:left;
+	padding:15px 0px;
+}
+ul.main-menu li {
+	float:left;
+}
+ul.main-menu li a {
+	color:#7f8c8d;
+	padding:0px 25px;
+	font-size:15px;
+}
+ul.main-menu li a:hover {
+	color: #38b7ea;
+}
+ul.main-menu li a:active {
+	color:#38b7ea;
+}
+/*product-info*/
+.product-info-white-bg {
+	background:#fff;
+	float:left;
+	margin: 10px 0;
+	padding: 10px;
+	border:1px solid #e8eff1;
+	width: 950px;
+}
+.product-name {
+	float: left;
+	width: 100%;
+}
+.product-name-left {
+	float: left;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	width: 400px;
+}
+.product-name-right {
+	float:right;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+.product-name-right ul {
+	float: left;
+	padding: 0 15px;
+	text-align: center !important;
+}
+.product-name-right ul li {
+	color:#34495e;
+	font-size:15px;
+}
+.product-name-right ul li span {
+	font-family: 'proxima_nova_rgbold';
+}
+.product-name-left h1 {
+	font-family: 'proxima_nova_rgbold';
+	font-size:20px;
+}
+.product-name-left ul {
+	margin-top:5px;
+}
+.product-name-left ul li {
+	float:left;
+}
+.product-name-left ul li a {
+	padding: 0 20px 0 8px;
+	color:#38b7ea;
+}
+.product-name-left img {
+	float:left;
+	margin-top:5px;
+}
+.product-name-para {
+	background: none repeat scroll 0 0 #f2f2f2;
+	float: left;
+	margin: 5px 0;
+	padding: 10px;
+	width: 98%;
+}
+.product-name-para p {
+	color:#34495e;
+	font-size:15px;
+}
+.product-description {
+	margin:0px;
+	float:left;
+	width:100%;
+}
+.product-description h1 {
+	font-family: 'proxima_nova_rgbold';
+	font-size:20px;
+	padding: 10px 0;
+}
+.product-inner-img img {
+	border-radius:5px;
+}
+.product-inner-img {
+	float: left;
+	text-align: center !important;
+	width: 100px;
+}
+.product-inner-img span {
+	color:#34495e;
+}
+.product-description-para {
+	float: left;
+	padding: 0 10px;
+	width:700px;
+}
+.product-description-para h1 {
+	font-size:15px;
+	padding:0px;
+	font-family: 'proxima_novalight';
+}
+.product-description-para ul {
+	float: left;
+	margin: 0;
+	padding: 25px 0;
+	width: 100%;
+}
+.product-description-para ul li {
+	float:left;
+}
+.product-description-para ul li img {
+	float: left;
+	margin-top: 5px;
+}
+.product-description-para ul li a {
+	color:#38b7ea;
+	padding:10px 20px 10px 10px;
+}
+.product-description-right {
+	float: right;
+	padding-top: 15px;
+	text-align: center !important;
+	width: 11%
+}
+.product-description-right h3 {
+	font-size:42px;
+	color:#27D9A5;
+	margin:0px;
+}
+.product-description-right span {
+	color:#2c3c49;
+	font-size:15px;
+}
+.product-full-container {
+	padding-top:30px;
+	padding-bottom:30px;
+	float:left;
+}
+/*Footer*/
+.footer-bg {
+	background-color:#0F181F;
+	width:100%;
+	float:left;
+}
+.footer-container {
+	width:970px;
+	margin:0px auto;
+}
+.footer-container p {
+	color: #7f8c8d !important;
+	float: left;
+	margin: 0 auto;
+	text-align: center !important;
+	width: 80%;
+}
+.footer-end-div {
+	padding:10px 0px;
+}
+ul.footer-end {
+	float: left;
+	padding: 40px 30px;
+	width: 260px;
+}
+ul.footer-end li a {
+	color:#7f8c8d;
+!important;
+}
+ul.footer-end li a:hover {
+	color:#38b7ea !important;
+}
+ul.footer-end span {
+	color:#fff;
+	font-size:13px;
+	font-family: 'proxima_nova_rgregular';
+}
+.gap-li {
+	margin-top:15px;
+}
+/*Invite Friends*/
+.top-background {
+	background-color:#3598DB;
+	width:100%;
+	overflow:hidden;
+}
+.invite-friends {
+	padding: 50px 0;
+}
+.invite-friends h1 {
+	color:#fff;
+	text-align:center;
+	font-family: 'proxima_novalight';
+}
+.invite-friends h1 span {
+	color:#27D9A5;
+}
+.invite-mails {
+	text-align:center;
+	width:100%;
+	float:left;
+	padding:40px 0px;
+}
+.invite-friends-inner {
+	width:320px;
+	float:left;
+}
+.invite-friends-inner ul {
+	margin:0px;
+	float:left;
+}
+.invite-friends-inner ul li {
+	float:left;
+}
+.invite-friends-inner ul li a {
+	float: left;
+	padding: 40px;
+}
+.invite-friends-inner ul li a img {
+	margin-right:10px;
+}
+.invite-friends-inner ul li a:hover {
+	color:#38b7ea;
+}
+/*Dashboard*/
+.dashboard-container
+{
+	float: left;
+    margin: 0;
+    padding: 10px 0;
+}
+.dashboard-left
+{
+	width:260px; float:left; background-color:#fff; border:1px solid #edf3f5;
+	
+}
+.dashboard-profile-name
+{
+    margin: 0;
+    padding: 15px 0;
+    text-align: center; 
+}
+.dashboard-profile-name span
+{
+	color:#34495e;  font-family: 'proxima_nova_rgbold';  font-size:19px;
+}
+
+.dashboard-profile-name p
+{
+color:#34495e;	font-family: 'proxima_novalight';font-size:19px;
+}
+.my-project-button
+{
+	text-align:center; float:left;
+}
+.my-project-button a
+{
+	background: none repeat scroll 0 0 #fbab4a;
+    border-radius: 40px;
+    color: #fff;
+    float: left;
+    font-size: 21px;
+    padding: 10px 0;
+    text-align: center !important;margin: 0 35px;
+    width: 188px;
+}
+.dashboard-friends-leads
+{
+ border-top:1px solid #e8e8e8;  border-bottom:1px solid #e8e8e8;  float:left; width:100%;margin: 25px 0;
+}
+
+.dashboard-friends-leads > ul {
+    border-right: 1px solid #e8e8e8;
+    float: left;
+    text-align: center !important;
+    width: 50%;   padding: 15px 0;
+}
+.dashboard-friends-leads ul li
+{
+	color:#34495e;font-family: 'proxima_nova_rgbold'; padding:3px 0px;  font-size:19px;
+}
+.dashboard-friends-leads ul li span
+{
+	color:#7f8c8d;  font-family: 'proxima_nova_rgregular';font-size:17px;
+}
+.dashboard-leads
+{   
+   border: medium none !important;
+    float: left;
+    text-align: center !important;
+    width: 49% !important;  padding: 15px 0;
+	
+}
+.update-account
+{
+	width:100%; text-align:center; float:left;border-bottom:1px solid #e8e8e8;  padding: 0 0 20px;
+}
+.update-account h1
+{
+	font-size:19px;  font-family: 'proxima_nova_rgbold';  text-align:left; padding-left:20px; padding-bottom: 10px;
+}
+.update-green-bg
+{
+	background-color: #000;
+    border-radius: 43px;
+    float: left;
+    
+    margin: 10px 0 15px 12px;
+    padding: 15px 0;
+    text-align: center !important;
+    width: 90%;
+}
+.update-green-bg1
+{
+	background-color:#2B95FF;
+    border-radius: 43px;
+    float: left;
+    
+    margin: 10px 0 0 12px;
+    padding: 15px 0;
+    text-align: center !important;
+    width: 50%;
+}
+.update-account p
+{
+	font-size:16px;
+}
+.update-account span
+{
+	color:#27D9A5;
+}
+.recent-projects
+{
+	width:100%; float:left;
+}
+.recent-projects h1
+{
+	font-size:19px; text-align:left;   padding: 10px 0 10px 20px;
+}
+/*.recent-projects  ul
+{
+	float: left;
+    padding-left: 22px;
+    width: 91%;
+}
+.recent-projects  ul li 
+{
+	float:left; border-bottom:1px solid #e8e8e8; width:100%;
+}
+.recent-projects ul li a
+{
+	width:100%;
+}
+.recent-projects  img
+{
+	border-radius: 7px;
+    margin-right: 10px;
+    margin-top: 7px;
+}*/
+.recent-project-inner
+{
+	width:92%; padding-left:20px; 
+}
+.recent-project-end
+{
+	border-bottom:1px solid #e8e8e8;  padding:10px 0px;
+}
+
+.recent-project-small-img {
+    float: left;
+    width: 16%;  margin: 8px 0;
+}
+.recent-project-right-inner
+{width:100%;
+}
+.recent-project-small-img img
+{
+	border-radius:7px;
+}
+.recent-project-right-inner a
+{
+	font-family: 'proxima_nova_rgregular'; font-size:15px;
+}
+.recent-project-right-inner a span
+{
+	color:#38b7ea;font-family: 'proxima_nova_rgregular'; font-size:15px;
+}
+.recent-project-end-sub
+{
+	border:none; padding:10px 0px;
+}
+.dashboard-right
+{
+	width:680px; float:left;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+.ir:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
+}
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+	visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before, .clearfix:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+.clearfix:after {
+	clear: both;
+}
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+ *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+/* Style adjustments for viewports that meet the condition */
+}
+ @media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+/* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+* {
+	background: transparent !important;
+	color: #000 !important; /* Black prints faster: h5bp.com/s */
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+a, a:visited {
+	text-decoration: underline;
+}
+a[href]:after {
+	content: " (" attr(href) ")";
+}
+abbr[title]:after {
+	content: " (" attr(title) ")";
+}
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+ content: "";
+}
+pre, blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
+thead {
+	display: table-header-group; /* h5bp.com/t */
+}
+tr, img {
+	page-break-inside: avoid;
+}
+img {
+	max-width: 100% !important;
+}
+ @page {
+ margin: 0.5cm;
+}
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
+h2, h3 {
+	page-break-after: avoid;
+}
+}
