@@ -32,7 +32,7 @@ class WebpagesController extends AppController {
         $this->set('advertisement', $advertisement);
         $testimonial = $this->Testimonial->find('all', array('conditions' => array('status' => 'Active', 'type' => 'Testimonial'), 'limit' => '2'));
         $this->set('test', $testimonial);
-        $title = 'Online Shopping Jewellery Store India | Buy Gold and Diamond Jewellery | shagunn.in';
+        $title = 'Online Shopping Jewellery Store India | Buy Gold and Diamond Jewellery | Cherishgold.com';
         $this->set('title', $title);
 
 		if (isset($this->request->data['giveaway-email'])) {
@@ -64,19 +64,19 @@ class WebpagesController extends AppController {
     }
 
     public function jewellery() {
-        $title = 'All Jewellery | shagunn.in';
+        $title = 'All Jewellery | Cherishgold.com';
         $this->set('title', $title);
     }
 	
 	public function testimonials() {
-		$title = 'Testimonials | shagunn.in';
+		$title = 'Testimonials | Cherishgold.com';
         $this->set('title', $title);
 		$testimonial = $this->Testimonial->find('all', array('conditions' => array('status' => 'Active', 'type' => 'Testimonial'), 'limit' => '2'));
         $this->set('test', $testimonial);
     }
 	
 	public function customersay() {
-		$title = 'Customer Say | shagunn.in';
+		$title = 'Customer Say | Cherishgold.com';
         $this->set('title', $title);
 		$testimonial = $this->Testimonial->find('all', array('conditions' => array('status' => 'Active', 'type' => 'Customer says'), 'limit' => '2'));
         $this->set('test', $testimonial);
@@ -100,7 +100,7 @@ class WebpagesController extends AppController {
 		// print_r($firstpro);
 		// echo "-->";
 		
-        $title = $firstpro['Product']['product_name'] . ' | shagunn.in';
+        $title = $firstpro['Product']['product_name'] . ' | Cherishgold.com';
         $this->set('title', $title);
         if (!in_array($firstpro['Product']['product_id'], $this->Session->read('browse'))) {
             $array = array_merge(array($firstpro['Product']['product_id']), $this->Session->read('browse'));

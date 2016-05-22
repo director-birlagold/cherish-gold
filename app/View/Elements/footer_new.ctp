@@ -107,7 +107,7 @@
 				$('body,html').animate({scrollTop:0},60,'swing');
 			});
 			
-			alert($('#tips < div').attr('style'));
+			//alert($('#tips < div').attr('style'));
         });
 </script> 
 
