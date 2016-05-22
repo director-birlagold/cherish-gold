@@ -42,7 +42,6 @@
 			$(window).scroll(function() {
 				var height_header = $('#bt_header').height();  			
 				if($(window).scrollTop() > height_header) {
-					
 					$('.header-bottom').addClass('boss_scroll');
 				} else {
 					$('.header-bottom').removeClass('boss_scroll');

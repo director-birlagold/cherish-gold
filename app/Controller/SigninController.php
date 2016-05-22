@@ -36,6 +36,10 @@ class SigninController extends AppController {
             $this->set("register",true);
         }
 
+        if(isset($this->params->query['rel']) &&  $this->params->query['rel'] == 'cart'){
+            $this->Session->write('cart_redirect',1);
+        }
+
         if ($this->Session->read('referer') == '') {
             $this->Session->write('referer', $this->referer());
         }
@@ -63,29 +67,22 @@ class SigninController extends AppController {
                         // $message = str_replace(array('{email}', '{password}'), array($email, $password), $activateemail['Emailcontent']['content']);
                         $adminmailid = $this->Adminuser->find('first', array('conditions' => array('admin_id ' => '1')));
                         //$this->mailsend(SITE_NAME, $adminmailid['Adminuser']['email'], $this->request->data['User']['email'], $activateemail['Emailcontent']['subject'], $message);
-                        if (isset($_REQUEST['ref'])) {
-                            if ($_REQUEST['ref'] == "cart") {
-                                $this->redirect(array('controller' => 'orders', 'action' => 'personal_details'));
-                            } else {					
-																
-                                if ($this->Session->read('referer')) {
-                                    $referer = $this->Session->read('referer');
-                                    $this->Session->delete('referer');
-                                    $this->redirect($referer);
-                                } else {
-                                    $this->redirect(array('controller' => 'signin', 'action' => 'personal'));
-                                }
-                            }
+
+                        if($this->Session->check('cart_redirect')){
+                            $this->Session->delete('cart_redirect');
+                            $this->redirect(array('controller' => 'orders', 'action' => 'personal_details'));
+                            die;
+                        }
+
+                        if ($this->Session->check('referer')) {
+                            $referer = $this->Session->read('referer');
+                            $this->Session->delete('referer');
+                            $this->redirect($referer);
+                            die;
                         } else {
                             $this->Session->setFlash("<div class='success msg'>" . __('Successfully Registered. Please update your profile') . "</div>");
-                            /*if ($this->Session->read('referer')) {
-                                $referer = $this->Session->read('referer');
-                                $this->Session->delete('referer');
-                                $this->redirect($referer);
-                            } else {
-                                $this->redirect(array('controller' => 'signin', 'action' => 'personal'));
-                            }*/
                             $this->redirect(array('controller' => 'signin', 'action' => 'personal'));
+                            die;
                         }
                     } else {
                         $this->Session->setFlash("<div class='error msg'>" . __('This Email id already exists.') . "</div>");
@@ -114,48 +111,42 @@ class SigninController extends AppController {
 										$this->Session->write("customer_id",$customer['CustomerBGP']['customer_id']);
 									}
                                     $this->Session->write($check);
-                                    if ($check['User']['cart_session'] != '') 
-									{
-										$prev_cart_session = $this->Session->read('cart_process');
-										$this->Shoppingcart->updateAll(array('cart_session'=>"'".$check['User']['cart_session']."'"),array('cart_session'=>$prev_cart_session));
-										$this->Session->write('cart_process', $check['User']['cart_session']);
+                                    if ($check['User']['cart_session'] != '') {
+                                        $prev_cart_session = $this->Session->read('cart_process');
+                                        $this->Shoppingcart->updateAll(array('cart_session'=>"'".$check['User']['cart_session']."'"),array('cart_session'=>$prev_cart_session));
+                                        $this->Session->write('cart_process', $check['User']['cart_session']);
                                     }
-									if($_SERVER["HTTP_REFERER"] == BASE_URL."/bgp-plan/registration")
-									{										
-										$this->redirect(array('controller' => 'customermaster', 'action' => 'registration'));
-									}
-									else
-									{
-										if (isset($_REQUEST['ref'])) {
-											if (trim($_REQUEST['ref']) == "cart") {
-												$this->redirect(array('controller' => 'orders', 'action' => 'shipping_details'));
-											} else {
-												if ($check['User']['first_name'] != '' && $check['User']['phone_no'] != ''){
-													if($check['User']['user_type'] == '2'){
-														$this->redirect(array('controller' => 'vendors', 'action' => 'user_orders'));
-													}else{
-														$this->redirect(array('controller' => 'signin', 'action' => 'details'));
-													}
-												}else{
-													$this->redirect(array('controller' => 'signin', 'action' => 'personal'));
-												}
-											}
-										}else {
-											
-											$this->Session->setFlash("<div class='success msg'>" . __('Successfully Logged in') . "</div>");
-											if ($check['User']['first_name'] != '' && $check['User']['phone_no'] != ''){
-												if($check['User']['user_type'] == '2'){
-													$this->redirect(array('controller' => 'vendors', 'action' => 'user_orders'));
-												}else{
-													$this->redirect(array('controller' => 'signin', 'action' => 'details'));
-												}
-											}else{
-												$this->redirect(array('controller' => 'signin', 'action' => 'personal'));
-											}
 
-											//$this->redirect(array('controller' => 'signin', 'action' => 'index','n'=>'tab-2'));
-										}
-									}
+                                    if($_SERVER["HTTP_REFERER"] == BASE_URL."/bgp-plan/registration")
+                                    {                                       
+                                        $this->redirect(array('controller' => 'customermaster', 'action' => 'registration'));
+                                    }
+
+                                    if($this->Session->check('cart_redirect')){
+                                        $this->Session->delete('cart_redirect');
+                                        $this->redirect(array('controller' => 'orders', 'action' => 'shipping_details'));
+                                        die;
+                                    }
+
+                                    if ($this->Session->check('referer')) {
+                                        $referer = $this->Session->read('referer');
+                                        $this->Session->delete('referer');
+                                        $this->redirect($referer);
+                                        die;
+                                    } else {
+                                        $this->Session->setFlash("<div class='success msg'>" . __('Successfully Logged in') . "</div>");
+
+                                        if($check['User']['user_type'] == '2'){
+                                            $this->redirect(array('controller' => 'vendors', 'action' => 'user_orders'));
+                                        }
+                                        pr($check); die;
+                                        if(empty($check['User']['first_name']) || empty($check['User']['phone_no'])){
+                                            $this->redirect(array('controller' => 'signin', 'action' => 'personal'));
+                                        }
+                                        $this->redirect(array('controller' => 'signin', 'action' => 'details'));
+                                        die;
+                                    }
+
                                 } else
                                     $this->Session->setFlash("<div class='error msg'>" . __('Email id and password mismatch') . ".</div>", '');
                             } else
