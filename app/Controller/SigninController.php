@@ -27,15 +27,11 @@ class SigninController extends AppController {
     public $layout = 'frontend';
 
     public function index() {
-
-		if($this->Session->check('loginid')){
+		if($this->Session->check('loginid'))
+		{
 			$this->redirect(array('action' => 'details'));
 		}
-
-        if(isset($this->params->query['rel']) &&  $this->params->query['rel'] == 'register'){
-            $this->set("register",true);
-        }
-
+		
         if ($this->Session->read('referer') == '') {
             $this->Session->write('referer', $this->referer());
         }
@@ -191,7 +187,7 @@ class SigninController extends AppController {
     }
 
      public function personal() {
-        if($this->request->is('post')) {
+        if ($this->request->is('post')) {
             if (!empty($this->request->data)) {
                 $user_id = $this->Session->read('User.user_id');
                 $check = $this->User->find('first', array('conditions' => array('user_id' => $user_id)));
@@ -329,7 +325,8 @@ class SigninController extends AppController {
         if (!$this->User->exists($id)) {
             throw new NotFoundException(__('Invalid User'));
         }
-        $shipping = $this->Shipping->find('first', array('conditions' => array('user_id ' => $this->params['pass']['0'])));
+        $shipping = $this->Shipping->find('all', array('conditions' => array('user_id ' => $this->params['pass']['0']),'order' => 'default DESC'));
+		
         if (empty($shipping)) {
             // $this->Session->setFlash('<div class="error msg">Please update shipping details.</div>', '');
         }
@@ -339,6 +336,7 @@ class SigninController extends AppController {
           $this->Session->setFlash('<div class="success msg">Shipping details updated successfully.</div>','');
           $this->redirect(array('action'=>'admin_index'));
           } */
+		
         $this->request->data = $shipping;
     }
 

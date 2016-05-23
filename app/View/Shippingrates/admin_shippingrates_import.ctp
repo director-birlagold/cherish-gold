@@ -11,7 +11,7 @@
                 <legend><?php echo __('Import Files');?></legend>
                  <dl class="inline"> 
 				<dt><label for="name">import files<span class="required">*</span></label></dt>     
-                            <dd><input type="file"   name="importfile" id="importfile" /></dd>
+                            <dd><input type="file"   name="importfile" id="importfile" class="validate[required]"/></dd>
                             
                    <dt></dt><dd></dd>         
                     <dt></dt>

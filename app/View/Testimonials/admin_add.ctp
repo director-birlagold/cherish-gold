@@ -11,7 +11,7 @@
                      echo $this->Form->input('name',array('div'=>false,'error'=>false,'name'=>'data[Testimonial][name]','label' => array('text'=>'Name'.''), 'before' => '<dt>', 'after' => '</dd>', 'between' => '</dt><dd>', 'class'=>"validate[custom[onlyLetterSp]]",'size'=>'50'));                 
                     if($this->params['pass']['0']=='customer_says') { 
 					
-					 echo $this->Form->input('customer_name',array('div'=>false,'error'=>false,'name'=>'data[Testimonial][customer_name]','label' => array('text'=>'Customer Name'.'<span class="required">*</span>'), 'before' => '<dt>', 'after' => '</dd>', 'between' => '</dt><dd>', 'class'=>"validate[custom[onlyLetterSp]]",'size'=>'50'));
+					 echo $this->Form->input('customer_name',array('div'=>false,'error'=>false,'name'=>'data[Testimonial][customer_name]','label' => array('text'=>'Customer Name'.'<span class="required">*</span>'), 'before' => '<dt>', 'after' => '</dd>', 'between' => '</dt><dd>', 'class'=>"validate[required,custom[onlyLetterSp]]",'size'=>'50'));
 					 
 					 echo $this->Form->input('facebook_link',array('div'=>false,'error'=>false,'name'=>'data[Testimonial][facebook_link]','label' => array('text'=>'Facebook Link'.'<span class="required">*</span>'), 'before' => '<dt>', 'after' => '</dd>', 'between' => '</dt><dd>', 'class'=>"validate[required,custom[url]]",'size'=>'50'));
 					 

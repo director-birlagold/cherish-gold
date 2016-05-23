@@ -1,3 +1,15 @@
+<?php
+		if(isset($_REQUEST['cdate'])){
+			$cdate =$_REQUEST['cdate'];
+		}else{
+			$cdate =0;
+		}
+		if(isset($_REQUEST['edate'])){
+			$edate =$_REQUEST['edate'];
+		}else{
+			$edate =0;
+		}
+	?>
 <div id="content" class="clearfix"> 
     <div class="container">
         <div class="mainheading">   
@@ -7,7 +19,18 @@
         <div class="titletag"><h1><?php echo __($cms.' Details'); ?></h1></div>
         </div>
         <div class="tablefooter clearfix">
+             <form name="searchfilter_news" action="" id="myForm1" method="post" style="width:100%;float:left;padding: 5px 10px;">  
+            <table cellpadding="0" cellspacing="2">
+            <tr>           
+             <td>&nbsp;<strong>From Date:&nbsp;</strong></td><td><input id="cdate" name="cdate"     type="text" value="<?php if(isset($_REQUEST['cdate'])){echo $_REQUEST['cdate'];}?>" /></td>  
+             <td>&nbsp;<strong>To Date:&nbsp;</strong></td><td><input id="edate" name="edate"    type="text" value="<?php if(isset($_REQUEST['edate'])){echo $_REQUEST['edate'];}?>" /></td> 
              
+            <td><input type="hidden" name="searchfilter_news" value="1"/><input type="submit" name="searchbutton" class="button small" value="<?php echo __('Search');?>" /></td>
+            <td>&nbsp;</td><td>
+            <?php if(isset($_REQUEST['search_news'])){			
+            echo $this->Html->link(__('Cancel'),array('action'=>'index/'.strtolower(str_replace(" ","_",$cms))),array('class'=>'button small','style'=>'padding:3px 5px;','title'=>'Cancel Search'));
+            } ?></td>
+            </tr></table></form>  
         </div>
     	<?php echo $this->Form->create('testimonials', array('action' => 'delete/'.$this->params['pass']['0'],'id'=>'myForm','Controller'=>'testimonials')); ?>
         <table cellpadding="0" cellspacing="0" id="example" class="table gtable">
@@ -68,3 +91,9 @@
     	<?php echo $this->Form->end(); ?>
     </div>
 </div>
+<script type="text/javascript">
+$(function() {
+	$( "#cdate" ).datepicker({ dateFormat: 'yy-mm-dd' });
+	$( "#edate" ).datepicker({ dateFormat: 'yy-mm-dd' });
+});
+</script>

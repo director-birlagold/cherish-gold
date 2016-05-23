@@ -1285,6 +1285,19 @@ class ProductsController extends AppController {
             $this->redirect(array('action' => 'admin_edit', $this->params['pass']['0']));
         }
     }
+	
+	 public function admin_deletecertificate() {
+        $this->checkadmin();
+        
+           
+			$this->Product->id = $this->Product->field('product_id', array('product_id' => $this->params['pass']['0']));
+			if ($this->Product->id) {
+				$this->Product->saveField('certificate_image', "");
+			}
+           
+            $this->Session->setFlash("<div class='success msg'>" . __('Ceritficate has been deleted successfully') . "</div>", '');
+            $this->redirect(array('action' => 'admin_edit', $this->params['pass']['0']));
+    }
 
     public function admin_product_export() {
         $this->layout = '';

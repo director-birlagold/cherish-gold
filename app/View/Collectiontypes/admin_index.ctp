@@ -13,7 +13,7 @@
         <table cellpadding="0" cellspacing="0" id="example" class="table gtable">
         <thead>
         <tr>
-         <th width="30" align="center"><?php echo $this->Html->image('arrow.jpg'); ?></th> 
+         <th width="30" align="center"><?php echo __('<input type="checkbox" id="checkAllAuto" name="action[]" value="" class="" />'); ?></th> 
          <th width="30" align="center"><?php echo __('#');?></th>        
          <th align="left"><?php echo $this->Paginator->sort('collection_name','Email');?></th> 
        
@@ -30,7 +30,7 @@
 				
 		?>
         <tr>
-        <td align="center"><?php echo $this->Html->image('arrow.jpg'); ?></td>
+        <td align="center"><input type="checkbox" name="action[]" value="<?php echo h($collectiontype['Collectiontype']['collectiontype_id']); ?>"  class="validate[minCheckbox[1]] checkbox" rel="action" /></td>
         <td align="center"><?php echo h($i); ?></td>
         <td align="left"><?php   echo $collectiontype['Collectiontype']['collection_name'];  ?></td>   
         <td align="center"><?php echo $this->Html->image('icons/edit.png',array('url'=>array('action'=>'collectiontype', $collectiontype['Collectiontype']['collectiontype_id']),'border'=>0,'alt'=>__('Edit')) );?></td>

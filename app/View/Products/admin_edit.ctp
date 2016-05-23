@@ -837,6 +837,8 @@
                 <dd><strong>(Please Upload Image size 500 x 166)</strong></dd>
                 <dt>&nbsp;</dt>
                 <dd><?php echo $this->Html->image('certificate/big/' . $product['Product']['certificate_image'], array('alt' => '')); ?></dd>
+				<dt>&nbsp;</dt>
+				<dd align="center"><?php echo $this->Html->image('icons/cross.png', array('url' => array('action' => 'deletecertificate', $this->params['pass']['0']), 'border' => 0, 'class' => 'confirdel', 'alt' => __('Delete'))); ?></dd>
             </fieldset>
             <fieldset><legend>Images</legend>
                 <dt>

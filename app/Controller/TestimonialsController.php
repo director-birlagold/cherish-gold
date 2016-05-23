@@ -23,6 +23,7 @@ class TestimonialsController extends AppController {
     public function admin_index() {
         $this->checkadmin();
         $this->Testimonial->recursive = 0;	
+		$cms = ucwords(str_replace('_', ' ', $this->params['pass']['0']));
 		if (isset($this->request->data['searchfilter_news'])) {   
 			$search_loc = array();         
   			if ($this->request->data['cdate'] != '') {     
@@ -32,7 +33,7 @@ class TestimonialsController extends AppController {
 				$search_loc[] = 'edate=' . $this->request->data['edate'];     
 			}      
 			if (!empty($search_loc)) {   
-				$this->redirect(array('action' => '?search_news=1&' . implode('&', $search_loc)));
+				$this->redirect(array('action' => 'index/'.$this->params['pass']['0'].'?search_news=1&' . implode('&', $search_loc)));
 			}      
 		}
 
@@ -52,12 +53,13 @@ class TestimonialsController extends AppController {
 				$condition = array('status !=' => 'Trash');    
 			}
 
-			$cms = ucwords(str_replace('_', ' ', $this->params['pass']['0']));
+			
 			//echo $cms; 
 			$cms = ($cms == "Testimonial") ? "Testimonial" : "Customer says";
 			//echo $cms;exit; 
 			$condition = array_merge($condition, array("type = '$cms'"));
 			$this->paginate = array('conditions' => $condition, 'order' => 'test_id DESC'); 
+			$this->set('cms', $cms);		
 			$this->set('testimonial', $this->Paginator->paginate('Testimonial'));		
 		/*search redirect*/       /*  $cms = ucwords(str_replace('_', ' ', $this->params['pass']['0']));		echo $cms; */
        /*  if (isset($this->request->data['searchfilter'])) {

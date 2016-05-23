@@ -10,41 +10,43 @@
         <div align="right" style="padding-right:50px;"><?php echo $this->Html->link('Back to User',array('action'=>'index'),array('class'=>'button')); ?></div>   
         <div class="texttabBox"> 
          <?php echo $this->Form->create('User',array('id'=>'myForm','type' => 'file','inputDefaults' => array ('fieldset' => false, 'legend' => false))); ?>    
-      <fieldset>
-        <legend>Shipping Details </legend>
+      <?php foreach($this->request->data as $ship) { ?>
+	  <fieldset>
+        <legend><?php if($ship['Shipping']['default'] == 1) { echo "Default"; } ?> Shipping Details</legend>
         <dl class="inline">
      
           <dt><label for="name">Shipping Address</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['shipping_address'])) { echo $this->request->data['Shipping']['shipping_address']; } else { echo '-'; } ?></textarea></dd>
+          <dd><?php if(!empty($ship['Shipping']['shipping_address'])) { echo $ship['Shipping']['shipping_address']; } else { echo '-'; } ?></textarea></dd>
           
           <dt><label for="name">LandMark</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['shipping_landmark'])) { echo $this->request->data['Shipping']['shipping_landmark']; } else { echo '-'; }?></dd>
+          <dd><?php if(!empty($ship['Shipping']['shipping_landmark'])) { echo $ship['Shipping']['shipping_landmark']; } else { echo '-'; }?></dd>
            <dt><label for="name">Pincode</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['shipping_pincode'])) { echo $this->request->data['Shipping']['shipping_pincode']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['shipping_pincode'])) { echo $ship['Shipping']['shipping_pincode']; }else { echo '-'; } ?></dd>
           
           <dt><label for="name">City</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['shipping_city'])) { echo $this->request->data['Shipping']['shipping_city']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['shipping_city'])) { echo $ship['Shipping']['shipping_city']; }else { echo '-'; } ?></dd>
           
           <dt><label for="name">State</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['shipping_state'])) { echo $this->request->data['Shipping']['shipping_state']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['shipping_state'])) { echo $ship['Shipping']['shipping_state']; }else { echo '-'; } ?></dd>
           
           <dt><label for="name">Billing Address</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['shipping_landmark'])) { echo $this->request->data['Shipping']['billing_address']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['shipping_landmark'])) { echo $ship['Shipping']['billing_address']; }else { echo '-'; } ?></dd>
           
           <dt><label for="name">LandMark</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['billing_landmark'])) { echo $this->request->data['Shipping']['billing_landmark']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['billing_landmark'])) { echo $ship['Shipping']['billing_landmark']; }else { echo '-'; } ?></dd>
           
            <dt><label for="name">Pincode</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['pincode'])) { echo $this->request->data['Shipping']['pincode']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['pincode'])) { echo $ship['Shipping']['pincode']; }else { echo '-'; } ?></dd>
           
           <dt><label for="name">City</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['city'])) { echo $this->request->data['Shipping']['city']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['city'])) { echo $ship['Shipping']['city']; }else { echo '-'; } ?></dd>
           
           <dt><label for="name">State</label></dt>
-          <dd><?php if(!empty($this->request->data['Shipping']['state'])) { echo $this->request->data['Shipping']['state']; }else { echo '-'; } ?></dd>
+          <dd><?php if(!empty($ship['Shipping']['state'])) { echo $ship['Shipping']['state']; }else { echo '-'; } ?></dd>
            
-     	 </dl>
+     	 </dl>	
       </fieldset>
+	  <?php } ?>
     </form>      
         </div>
        </div> 

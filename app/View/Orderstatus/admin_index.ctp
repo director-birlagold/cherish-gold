@@ -12,8 +12,7 @@
         <table cellpadding="0" cellspacing="0" id="example" class="table gtable">
         <thead>
         <tr>
-         <th width="30" align="center"><?php  echo $this->Html->image('icons/arrow.jpg');
-		 //echo __('<input type="checkbox" id="checkAllAuto" name="action[]" value="0" class="validate[minCheckbox[1]] checkbox" />'); ?></th> 
+         <th width="30" align="center"><?php echo __('<input type="checkbox" id="checkAllAuto" name="action[]" value="" class="" />'); ?></th> 
          <th width="30" align="center"><?php echo __('#');?></th>        
          <th align="left"><?php echo $this->Paginator->sort('orderstatus','Order status');?></th> 
          <th width="30" align="center">Edit</th>
@@ -28,7 +27,7 @@
         foreach ($orderstatus as $status):
 		?>
         <tr>
-        <td align="center"><?php echo $this->Html->image('icons/arrow.jpg');?></td>
+        <td align="center"><input type="checkbox" name="action[]" value="<?php echo h($status['Orderstatus']['order_sts_id']); ?>"  class="validate[minCheckbox[1]] checkbox" rel="action" /></td>
         <td align="center"><?php echo h($i); ?></td>
         <td align="left"><?php echo h($status['Orderstatus']['order_status']); ?></td>
        

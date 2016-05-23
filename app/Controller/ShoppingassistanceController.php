@@ -65,8 +65,8 @@ class ShoppingassistanceController extends AppController {
             $check = $this->ShoppingAssistance->find('first', array('conditions' => array('title' => $this->request->data['ShoppingAssistance']['title'], 'shopping_assistance_id !=' => $this->params['pass']['0'])));
             if (empty($check)) {
                 $this->request->data['ShoppingAssistance']['shopping_assistance_id'] = $id;
+               
                 if ($this->request->data['ShoppingAssistance']['image']['name'] != '') {
-
                     extract($this->request->data['ShoppingAssistance']['image']);
                     if ($size && !$error) {
                         $extension = $this->getFileExtension($name);
@@ -78,6 +78,11 @@ class ShoppingassistanceController extends AppController {
                         $this->request->data['ShoppingAssistance']['image'] = $imagename;
                     }
                 }
+				else
+				{
+					$this->request->data['ShoppingAssistance']['image'] = $this->request->data['image1'];
+				}
+				
                 if ($this->ShoppingAssistance->save($this->request->data)) {
                     $this->Session->setFlash('<div class="success msg">' . __('Shopping Assistance updated sucessfully') . '</div>', '');
                     return $this->redirect(array('action' => 'index'));
