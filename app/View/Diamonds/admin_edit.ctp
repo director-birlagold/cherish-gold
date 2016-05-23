@@ -1,7 +1,7 @@
 <?php echo $this->Html->script(array('ckeditor/ckeditor'));?>
 <div id="content"  class="clearfix">			
     <div class="container">
-        <div align="right" style="padding-right:10px;"><?php echo $this->Html->link(__('Back to Stone Details'),array('action'=>'index'),array('class'=>'button')); ?></div>        
+        <div align="right" style="padding-right:10px;"><?php echo $this->Html->link(__('Back to Diamond Details'),array('action'=>'index'),array('class'=>'button')); ?></div>        
        <?php echo $this->Form->create('Diamond',array('id'=>'myForm','type' => 'file','inputDefaults' => array ('fieldset' => false, 'legend' => false))); ?>        	
             <fieldset>
                 <legend><?php echo __('Edit Diamond');?></legend>

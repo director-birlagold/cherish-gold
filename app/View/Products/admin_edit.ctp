@@ -804,7 +804,7 @@
                 <dl class="inline">
 
                     <dt><label for="name">VAT/CST<span class="required">*</span></label></dt>                                               
-                    <dd><input type="text" name="data[Product][vat_cst]" id="vat_cst" size="50" class="validate[required,custom[floatnumbers]]" value="<?php echo $product['Product']['vat_cst'] ?>" />&nbsp;&nbsp; %</dd>
+                    <dd><input type="text" name="data[Product][vat_cst]" id="vat_cst" size="50" class="validate[required,custom[number]]" onkeypress="return floatnumbers(this, event)" value="<?php echo $product['Product']['vat_cst'] ?>" />&nbsp;&nbsp; %</dd>
 
             </fieldset>
             <fieldset><legend>Product Delivery</legend>

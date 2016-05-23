@@ -2,58 +2,11 @@
 <div id="content" class="clearfix"> 
     <div class="container">
         <div class="mainheading">   
-        <div class="btnlink"><?php echo $this->Html->link(__('+Add product'), array('action' => 'add'),array('class'=>'button')); ?></div> 
-		<div class="btnlink"><?php echo $this->Html->link(__('+Import'), array('action' => 'admin_productimport'),array('class'=>'button')); ?></div>
-        <div class="btnlink"><?php echo $this->Html->link(__('+Export'), array('action' => 'admin_product_export'),array('class'=>'button')); ?></div>
+        <div class="btnlink"><?php // echo $this->Html->link(__('+Add product'), array('action' => 'add'),array('class'=>'button')); ?></div> 
+        <div class="btnlink"><?php // echo $this->Html->link(__('+Export'), array('action' => 'admin_product_export'),array('class'=>'button')); ?></div>
         <div class="titletag"><h1><?php echo __('Product Details'); ?></h1></div>
         </div>
-        <div class="tablefooter clearfix">
-           <form name="searchfilters" action="" id="myForm1" method="post" style="width:100%;float:left;padding: 5px 10px;">  
-            <table cellpadding="0" cellspacing="2">
-            <tr>
-            
-           <td><strong><?php echo __('V. Name');?> : </strong>&nbsp;</td>
-            <td>
-            <select name="searchvendorname" id="searchvendorname">
-          <option value="">Vendor</option>
-          <?php
-		 
-		  foreach($vendorstatus as $vendorstatus){
-			  echo '<option value="'.$vendorstatus['Vendor']['vendor_id'].'" '.(isset($_REQUEST['searchvendorname']) && $_REQUEST['searchvendorname']==$vendorstatus['Vendor']['vendor_id']?'selected="selected"':'').'>'.$vendorstatus['Vendor']['Company_name'].'</option>';
-		  }
-		  ?>
-          </select>
-           </td><td>&nbsp;</td> 
-           <td><strong><?php echo __('Category');?> : </strong>&nbsp;</td>
-            <td><select name="searchcategory" id="category_id">
-          <option value="">Select Category</option>
-          <?php
-		  foreach($category as $category){
-			  echo '<option value="'.$category['Category']['category_id'].'" '.(isset($_REQUEST['searchcategory']) && $_REQUEST['searchcategory']==$category['Category']['category_id']?'selected="selected"':'').'>'.$category['Category']['category'].'</option>';
-		  }
-		  ?>
-          </select></td>
-           
-           
-            <!--<td><strong><?php echo __('V. Code');?> : </strong>&nbsp;</td>
-            <td><input id="vendorcode" name="vendorcode" type="text"  autocomplete="off" value="<?php if(isset($_REQUEST['vendorcode'])){echo $_REQUEST['vendorcode'];}?>" /></td><td>&nbsp;</td>-->
-             <td><strong><?php echo __('P. Name');?> : </strong>&nbsp;</td>
-            <td><input id="productname" name="productname" type="text"  autocomplete="off" value="<?php if(isset($_REQUEST['productname'])){echo $_REQUEST['productname'];}?>" /></td><td>&nbsp;</td>
-             <td><strong><?php echo __('P.Code');?> : </strong>&nbsp;</td>
-            <td><input id="productcode" name="productcode" type="text"  autocomplete="off" value="<?php if(isset($_REQUEST['productcode'])){echo $_REQUEST['productcode'];}?>" /></td><td>&nbsp;</td>
-            
-            
-            <td>&nbsp;<strong>From Date:&nbsp;</strong></td><td><input id="cdate" name="cdate"     type="text" value="<?php if(isset($_REQUEST['cdate'])){echo $_REQUEST['cdate'];}?>" /></td>  
-             <td>&nbsp;<strong>To Date:&nbsp;</strong></td><td><input id="edate" name="edate"    type="text" value="<?php if(isset($_REQUEST['edate'])){echo $_REQUEST['edate'];}?>" /></td>      
-                   
-            <td><input type="hidden" name="searchfilter" value="1"/><input type="submit" name="searchbutton" class="button small" value="<?php echo __('Search');?>" /></td>
-            <td>&nbsp;</td>
-            <td>
-            <?php if(isset($_REQUEST['search'])){			
-            echo $this->Html->link(__('Cancel'),array('action'=>'index'),array('class'=>'button small','style'=>'padding:3px 5px;','title'=>'Cancel Search'));
-            } ?></td>
-            </tr></table></form>     
-        </div>
+        <div class="tablefooter clearfix"></div>
     	<?php echo $this->Form->create('product', array('action' => 'delete','id'=>'myForm','Controller'=>'products')); ?>
         <table cellpadding="0" cellspacing="0" id="example" class="table gtable">
         <thead>

@@ -5,7 +5,7 @@
       <fieldset>
         <legend>Edit Category</legend>
         <dl class="inline">
-         <dt><label for="name">Category Code</label></dt>
+         <dt><label for="name">Category Code<span class="required">*</span></label></dt>
           <dd><input type="text" name="data[Category][category_code]" id="category_code"  class="validate[required]" size="50" value="<?php if(isset($category['Category']['category_code'])){ echo $category['Category']['category_code'];}?>"/></dd>
           <dt><label for="name">Category<span class="required">*</span></label></dt>
           <dd><input type="text" name="data[Category][category]" id="category"  class="validate[required]" size="50" value="<?php if(isset($category['Category']['category'])){ echo $category['Category']['category'];}?>"/>

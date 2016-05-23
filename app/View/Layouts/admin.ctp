@@ -164,7 +164,7 @@
                            <li><a href="#">Stone Mgnt</a>
                        <ul>
                     
-                       <!--<li id="changeinfo"><?php echo $this->Html->link('Diamond',array('controller'=>'diamonds','action'=>'index'));?></li>-->
+                       <li id="changeinfo"><?php echo $this->Html->link('Diamond Type',array('controller'=>'diamonds','action'=>'index'));?></li>
                        <li id="changeinfo"><?php echo $this->Html->link('Diamond Clarity',array('controller'=>'Clarities','action'=>'index'));?></li>
                        <li id="changeinfo"><?php echo $this->Html->link('Diamond Color',array('controller'=>'Colors','action'=>'index'));?></li>
                        <li id="changeinfo"><?php echo $this->Html->link('Gemstone',array('controller'=>'Gemstones','action'=>'index'));?></li>

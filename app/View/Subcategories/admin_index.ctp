@@ -1,7 +1,9 @@
 <div id="content" class="clearfix"> 
     <div class="container">
         <div class="mainheading">   
-        <div class="btnlink"><?php echo $this->Html->link(__('+Add Subcategory'), array('action' => 'add'),array('class'=>'button')); ?></div>         
+        <div class="btnlink"><?php echo $this->Html->link(__('+Add Subcategory'), array('action' => 'add'),array('class'=>'button')); ?></div>  
+        <div class="btnlink"><?php echo $this->Html->link(__('+Export'), array('action' => 'admin_sub_category_export'),array('class'=>'button')); ?></div>  
+		
         <div class="titletag"><h1><?php echo __('Subcategory'); ?></h1></div>
         </div>
         <div class="tablefooter clearfix">

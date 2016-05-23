@@ -7,7 +7,7 @@
         <div class="titletag"><h1><?php echo __('Discount Details'); ?></h1></div>
         </div>
         <div class="tablefooter clearfix">
-            <form name="searchfilters" action="" id="myForm1" method="post" style="width:850px;float:left;padding: 5px 10px;">  
+            <form name="searchfilters" action="" id="myForm1" method="post" style="width:900px;float:left;padding: 5px 10px;">  
             <table cellpadding="0" cellspacing="2">
             <tr>
              <td><strong><?php echo __('Type');?> : </strong>&nbsp;</td>
