@@ -16,15 +16,18 @@
   </div>
 </div>
 
-<div style="float:left; color:#8d3446; font-size:18px; padding-top:7px;">SHOPPING CART </div>
-<div style="float:right; width:130px; text-align:center;" class="place_order"><?php if($this->Session->read('User')=='') {
-			  $link=BASE_URL.'signin/index?ref=cart';
-		  }else
-		  {
-			    $link=BASE_URL.'orders/shipping_details';	
+  <div style="float:left; color:#8d3446; font-size:18px; padding-top:7px;">SHOPPING CART </div>
+  <div style="float:right; width:130px; text-align:center;" class="place_order">
+    <?php if($this->Session->check('User.first_name')) {
+            $link=BASE_URL.'orders/shipping_details';	
+      }else{
+            $link=BASE_URL.'signin/index?ref=cart';
 		  }
 		  ?>
-          <div class="place_order"><a href="<?php echo $link;?>"> Place Order</a></div></td></div>
+          <div class="place_order">
+            <a href="<?php echo $link;?>"> Place Order</a>
+          </div>
+    </div>
 <div style="clear:both;"></div>
 <div class="productMiddleDeatil">
   <form name="cartform" id="cartform" action="" method="post">
@@ -193,15 +196,9 @@
         <td>&nbsp;</td>
         <td style="font-size:16px;"><strong>Total</strong></td>
         <td style="font-size:16px;"><strong>Rs.<?php echo indian_number_format($total);?>/-</strong></td>
-        <td align="center"><?php
-		  if($this->Session->read('User')=='') {
-			  $link=BASE_URL.'signin/index?ref=cart';
-		  }else
-		  {
-			    $link=BASE_URL.'orders/shipping_details';	
-		  }
-		  ?>
-          <div class="place_order"><a href="<?php echo $link;?>"> Place Order</a></div></td>
+        <td align="center">
+          <div class="place_order"><a href="<?php echo $link;?>"> Place Order</a></div>
+        </td>
        
       </tr>
     </table>

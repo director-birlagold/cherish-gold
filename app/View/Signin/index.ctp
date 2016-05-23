@@ -11,7 +11,9 @@ $( "#tabs2" ).tabs({
 
 <div id="tabs2"  class="tabsDiv ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-collapsible" >
   <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active"><a  class="ui-tabs-anchor" href="#tabs-1">SIGN IN</a></li>
+                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                    <a class="ui-tabs-anchor" id="js_signin_label" href="#tabs-1">SIGN IN</a>
+                </li>
         </ul></div>
             <div id="tabs-1" >
                 <p>
@@ -210,10 +212,12 @@ $( "#tabs2" ).tabs({
             $('#signup').click(function () {
                 $('.loginin').show("slow");
                 $('.logintwo').hide("slow");
+                $("#js_signin_label").html("REGISTER");
             });
             $('#signin').click(function () {
                 $('.loginin').hide("slow");
                 $('.logintwo').show("slow");
+                $("#js_signin_label").html("SIGN IN");
             });
 			 $('#forgot_button').click(function () {
                $('.loginin').hide("slow");

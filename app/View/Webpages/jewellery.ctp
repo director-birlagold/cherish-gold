@@ -6,11 +6,12 @@
     
     <p align="center"><?php echo $this->Html->image('all-jewellery.jpg'); ?></p>
     <?php
-	 $counts='';
-	 $imagecount1=ClassRegistry::init('Productimage')->find('all', array('conditions' => array('status'=>'Active')));
-	 $counts+=count($imagecount1);
+    $active_categories = ClassRegistry::init('Category')->find('list', array('conditions' => array('status' =>'Active'),'fields'=>array('category_id','category_id')));
+	 $imagecount1 = ClassRegistry::init('Product')->find('count', array(
+                  'conditions' => array('status'=>'Active','category_id'=>$active_categories)
+                  ));
 	?>
-    <p align="center"><a style="color:#666666;" href="#">View all (<?php echo $counts;?>)</a></p>
+    <p align="center"><a style="color:#666666;" href="#">View all (<?php echo $imagecount1;?>)</a></p>
     <div style="clear:both;">&nbsp;</div>
     <div class="shadow"><?php  // echo $this->Html->image('shadow.png',array("alt" => "Image")); ?><hr/></div>
     <div style="float:left; width:100%;">
@@ -18,11 +19,10 @@
 	<?php 
 	$i=0;
     $category = ClassRegistry::init('Category')->find('all', array('conditions' => array('status' =>'Active'),'order'=>'category_id ASC'));
-   $length = count($category);
-   foreach($category as $categories) {
-		$product=ClassRegistry::init('Product')->find('all', array('conditions' => array('category_id' =>$categories['Category']['category_id'],'status'=>'Active'),'limit'=>'7'));
-       
-    ?>
+    $length = count($category);
+    foreach($category as $categories) {
+		  $product=ClassRegistry::init('Product')->find('all', array('conditions' => array('category_id' =>$categories['Category']['category_id'],'status'=>'Active'),'limit'=>'7'));
+      if (!empty($product)){  ?>
    
         <div class="category_images">
         <p align="center"><?php $name=$categories['Category']['category']; echo  strtoupper($name);?></p>
@@ -44,14 +44,22 @@
          <?php } } ?>
         </ul>
        
-        
-        <p align="center"><a href="<?php echo BASE_URL.$categories['Category']['link'];?>" style="color:#666666;"><?php echo $count;?> More</a><?php //echo $this->Html->link($count.'  More',array('action'=>'category_list','controller'=>'webpages',$categories['Category']['link']),array('style' => 'color:#8d3446;'));?></p>  
+        <?php $product_count = ClassRegistry::init('Product')->find('count', array('conditions' => array('category_id' =>$categories['Category']['category_id'],'status'=>'Active'))); ?>
+        <p align="center">
+          <a href="<?php echo BASE_URL.$categories['Category']['link'];?>" style="color:#666666;"><?php echo $product_count;?> More</a>
+          <?php //echo $this->Html->link($count.'  More',array('action'=>'category_list','controller'=>'webpages',$categories['Category']['link']),array('style' => 'color:#8d3446;'));?>
+        </p>  
        <!-- <p align="center"><?php echo $count.'  More';?></p>-->
           </div> 
-         <?php if ($i!= $length- 1) { ?>
-        <div class="shadow"><?php  // echo $this->Html->image('shadow.png',array("alt" => "Image")); ?><hr/></div>
+
+         <?php if ($i != $length- 1) { ?>
+        <div class="shadow">
+          <?php  // echo $this->Html->image('shadow.png',array("alt" => "Image")); ?><hr/>
+        </div>
         <div style="clear:both;"></div>
-       <?php }  $i++;} ?>
+        <?php }
+        } 
+    $i++;} ?>
        
      </div>
   </div>

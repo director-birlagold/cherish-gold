@@ -66,9 +66,11 @@
                                                 <?php $mar_index++; } ?>
                                             </ul>
                                         </div>
-                                    </div></td>
+                                    </div>
+                                </td>
                             </tr>
-                        </table></td>
+                        </table>
+                    </td>
                     <?php
                     $metals = ClassRegistry::init('Productmetal')->find('first', array('conditions' => array('product_id' => $product['Product']['product_id'], 'type' => 'Purity')));
                     $diamond = ClassRegistry::init('Productdiamond')->find('first', array('conditions' => array('product_id' => $product['Product']['product_id'])));
@@ -86,14 +88,25 @@
                                 <td colspan="9">&nbsp;</td>
                             </tr>
                             <tr>
-                                <td colspan="9"><strong>Product code :</strong><?php echo $category['Category']['category_code']; ?><?php echo $product['Product']['product_code']; ?> -
-                                    <span class="pcode_purity" ><?php echo $metals['Productmetal']['value']; ?>K<?php ?></span><?php if (!empty($diamond)) { ?><span class="pcode_clarity" ><?php echo $diamond['Productdiamond']['clarity']; ?></span><span class="pcode_stonecolor"><?php echo $diamond['Productdiamond']['color']; ?></span><?php } ?></td>
+                                <td colspan="9">
+                                    <strong>Product code :</strong>
+                                        <?php echo $category['Category']['category_code']; ?><?php echo $product['Product']['product_code']; ?> -
+                                        <span class="pcode_purity">
+                                            <?php echo $metals['Productmetal']['value']; ?>K
+                                        </span>
+                                    <?php if (!empty($diamond)) { ?>
+                                            <span class="pcode_clarity">
+                                                <?php echo $diamond['Productdiamond']['clarity']; ?>
+                                            </span>
+                                            <span class="pcode_stonecolor"><?php echo $diamond['Productdiamond']['color']; ?></span>
+                                        <?php } ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="9">&nbsp;</td>
                             </tr>
                             <tr>
-                                <td colspan="9" class="amt">₹ <span class="total_amount"><?php echo $product['Product']['total_amount']; ?></span>/-</td>
+                                <td colspan="9" class="amt">Rs. <span class="total_amount"><?php echo $product['Product']['total_amount']; ?></span>/-</td>
                             </tr>
                             <tr>
                                 <td colspan="9">&nbsp;</td>
@@ -347,8 +360,8 @@
                                 <td>Metal</td>
                                 <td> <div id="productcode">
                                         <?php
-//$metals=ClassRegistry::init('Productmetal')->find('first', array('conditions' => array('product_id' =>$this->params['pass']['0'])));
-//$purity=ClassRegistry::init('Purity')->find('first', array('conditions' => array('purity_id' =>$metals['Productmetal']['purity'])));
+                //$metals=ClassRegistry::init('Productmetal')->find('first', array('conditions' => array('product_id' =>$this->params['pass']['0'])));
+                //$purity=ClassRegistry::init('Purity')->find('first', array('conditions' => array('purity_id' =>$metals['Productmetal']['purity'])));
                                         ?>
                                         -</div></td>
                             </tr>
@@ -609,13 +622,7 @@
 		<!--  <a href="<?php echo BASE_URL; ?>webpages/product_details/<?php echo $productnew['Product']['product_id']; ?>"><?php echo $this->Html->image($imagelink, array('border' => 0, 'alt' => 'logo')); ?></a>--></div>
 				<?php } ?>
 			</div>
-		</div>
-		
-		
-		
-		
-		
-		
+		</div>		
 		
 		<div class="shadow"><?php // echo $this->Html->image('shadow.png', array('border' => 0, 'alt' => 'logo')); ?><hr/></div>
         <!--<div style="clear:both;">&nbsp;</div>-->
@@ -737,7 +744,6 @@
     $(document).ready(function () {
         $("#ratingForm").validationEngine();
         $("#QuestionForm").validationEngine();
-        $("#deliveryForm").validationEngine();
     });
 </script>
 <!--<script>
@@ -766,7 +772,7 @@ $(document).ready(function(){
         autoHidePrompt: true,
         autoHideDelay: 50000,
         onValidationComplete: function (form, status) {
-            if (status == true) {
+            if(status == true) {
                 var id = $('.pincode').val();
                 var product_id = $('.product_id').val();
                 $.ajax({

@@ -96,10 +96,6 @@ class WebpagesController extends AppController {
         $product_name_par = $this->params['pass']['2'];
         $firstpro = $this->Product->find('first', array('conditions' => array('product_id' => $product_name_par)));
 		
-		// echo "<!-- Product Details ";
-		// print_r($firstpro);
-		// echo "-->";
-		
         $title = $firstpro['Product']['product_name'] . ' | Cherishgold.com';
         $this->set('title', $title);
         if (!in_array($firstpro['Product']['product_id'], $this->Session->read('browse'))) {
@@ -115,9 +111,6 @@ class WebpagesController extends AppController {
         $colors = $this->Product->find('all', array('conditions' => array('product_id' => $product_name_par)));
         $this->set('colors', $colors);
 
-
-
-
         $customer = $this->Testimonial->find('all', array('conditions' => array('status' => 'Active', 'type' => 'Customer says'), 'limit' => '2'));
         $this->set('customer', $customer);
 
@@ -128,7 +121,7 @@ class WebpagesController extends AppController {
             $this->request->data['Rating']['created_date'] = date('Y-m-d H:i:s');
             $this->Rating->save($this->request->data);
             $this->Session->setFlash("<div class='success msg'>" . __('Rating & Reviews  saved successfully.') . "</div>");
-            $this->redirect(array('action' => 'product_details', $this->params['pass']['0']));
+            //$this->redirect(array('action' => 'product_details', $this->params['pass']['0']));
         }
 
 
@@ -153,9 +146,8 @@ class WebpagesController extends AppController {
 
             $this->mailsend(SITE_NAME, $email, $activateemail['Emailcontent']['fromemail'], $activateemail['Emailcontent']['subject'], $message);
             $this->Session->setFlash("<div class='success msg'>" . __('Question  saved successfully.') . "</div>");
-            $this->redirect(array('action' => 'product_details', $this->params['pass']['0']));
+            //$this->redirect(array('action' => 'product_details', $this->params['pass']['0']));
         }
-
 
         /** count review and rating * */
         $reviewcount = $this->Rating->find('count', array('conditions' => array('product_id' => $firstpro['Product']['product_id'])));

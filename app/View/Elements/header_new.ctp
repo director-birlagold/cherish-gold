@@ -105,9 +105,9 @@
 				<div id="bt_mainmenu">
 					<div class="row">
 						<div class="right-side col-lg-2 col-md-2 col-sm-3 col-xs-12 boss-right" >
-							<div >
+							<div>
 								<a href="<?php echo BASE_URL."shoppingcarts/shopping_cart"; ?>">
-								<button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn-dropdown-cart dropdown-toggle">
+								<!-- <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn-dropdown-cart dropdown-toggle"> -->
 								<?php echo $this->Html->image('/img/frontendTheme/catalog/shopping-cart-icon.png'); ?>
 								<?php
 									if ($this->Session->read('cart_process') != '') 
@@ -135,7 +135,7 @@
 									}
 								?>
 								
-								</button>
+								<!-- </button> -->
 								</a>
 								<ul class="dropdown-menu pull-right">
 									<li>
