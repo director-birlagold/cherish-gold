@@ -5,6 +5,7 @@ if (!empty($product)) {
 
     $productdiv = '';
     foreach ($product as $products) {
+
         $images = ClassRegistry::init('Productimage')->find('first', array('conditions' => array('product_id' => $products['Product']['product_id'], 'status' => 'Active')));
         $category = ClassRegistry::init('Category')->find('first', array('conditions' => array('category_id' => $products['Product']['category_id'])));
         if (!empty($products['Product']['subcategory_id'])) {
@@ -76,7 +77,7 @@ if (!empty($product)) {
             $image = 'No Image Found';
         }
 
-        $productdiv.='<p style="height:133px;">' . $image . '</p> <p align="center">Rs. ' . indian_number_format($products[0]['totprice']) . '</p>
+        $productdiv.='<p style="height:133px;">' . $image . '</p> <p align="center">Rs. ' . number_format($products[0]['totprice'],0) . '</p>
           <div style="border-bottom:1px solid #ccc; float:left; width:100%; padding-bottom:5px;">
             <div style="float:left; color:#dba715; font-size:18px; font-weight:bold;">&nbsp;</div>
             <div style="float:right;">';

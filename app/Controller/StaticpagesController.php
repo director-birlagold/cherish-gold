@@ -87,7 +87,7 @@ class StaticpagesController extends AppController {
         //$content=$this->Staticpage->find('first',array('conditions'=>array('pagename'=>$this->request->params['url']['url'])));
         //print_r($this->request->url);exit;
         $content = $this->Staticpage->find('first', array('conditions' => array('link' => $this->request->url)));
-
+        //pr($content); die;
         $this->set('title', $content['Staticpage']['meta_title']);
         $this->set('metakeyword', $content['Staticpage']['meta_keyword']);
         $this->set('metadescription', $content['Staticpage']['meta_description']);

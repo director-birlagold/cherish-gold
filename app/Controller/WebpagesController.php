@@ -25,7 +25,8 @@ class WebpagesController extends AppController {
         $banner = $this->Banner->find('all', array('conditions' => array('status' => 'Active')));
         $this->set('banner', $banner);
 		
-		$shopping_assistance = $this->ShoppingAssistance->find('all', array('conditions' => array('status' => 'Active')));
+		//$shopping_assistance = $this->ShoppingAssistance->find('all', array('conditions' => array('status' => 'Active')));
+        $shopping_assistance = null;
         $this->set('shopping_assistance', $shopping_assistance);
 		
 		$advertisement = $this->Advertisement->find('all', array('conditions' => array('status' => 'Active')));

@@ -1362,7 +1362,7 @@ class ProductsController extends AppController {
         }
 
 
-        $results = $this->Product->find('all', array('conditions' => $search));
+        $results = $this->Product->find('all', array('conditions' => $search,'limit'=>500));
         //added by prakash
         $product_type = array(
             '1' => 'Plain Gold',
@@ -1408,7 +1408,7 @@ class ProductsController extends AppController {
         $i = 1;
         foreach ($results as $results) {
 
-            $product = $this->Productdiamond->find('all', array('conditions' => array('product_id' => $results['Product']['product_id']), array(/* 'limit' => '1' */)));
+            $product = $this->Productdiamond->find('all', array('conditions' => array('product_id' => $results['Product']['product_id']),'order'=>array('Productdiamond.clarity','Productdiamond.color'),'group'=>'Productdiamond.stone_weight', array(/* 'limit' => '1' */)));
             $product_count = $this->Productdiamond->find('count', array('conditions' => array('product_id' => $results['Product']['product_id'])));
             $productgem = $this->Productgemstone->find('all', array('conditions' => array('product_id' => $results['Product']['product_id']), array(/* 'limit' => '1' */)));
             $productgem_count = $this->Productgemstone->find('count', array('conditions' => array('product_id' => $results['Product']['product_id'])));

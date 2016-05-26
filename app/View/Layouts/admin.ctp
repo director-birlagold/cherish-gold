@@ -119,14 +119,16 @@
                         <li id="changeinfo"><?php echo $this->Html->link('Ads Banner',array('controller'=>'advertisements','action'=>'index'));?></li>
                         <li id="changeinfo"><?php echo $this->Html->link('Newsletter',array('controller'=>'newsletters','action'=>'index'));?></li>
                          <li id="changeinfo"><?php echo $this->Html->link('Testimonial ',array('controller'=>'testimonials','action'=>'index','testimonial'));?></li>
-                        <li id="changeinfo"><?php echo $this->Html->link('Customer say',array('controller'=>'testimonials','action'=>'index','customer_says'));?></li>
-<!--                         <li id="changeinfo"><?php echo $this->Html->link('Locate us',array('controller'=>'locateus','action'=>'index'));?></li>
--->                         <li id="changeinfo"><?php echo $this->Html->link('Collection Type',array('controller'=>'collectiontypes','action'=>'admin_index'));?></li>
+                        <?php /* <li id="changeinfo"><?php echo $this->Html->link('Customer say',array('controller'=>'testimonials','action'=>'index','customer_says'));?></li>
+                        <li id="changeinfo"><?php echo $this->Html->link('Locate us',array('controller'=>'locateus','action'=>'index'));?></li>
+                        */ ?>
+                        <li id="changeinfo"><?php echo $this->Html->link('Collection Type',array('controller'=>'collectiontypes','action'=>'admin_index'));?></li>
                         <li id="changeinfo"><?php echo $this->Html->link('Order Status', array('controller' => 'orderstatus', 'action' => 'admin_index')); ?></li>
                         <li id="changeinfo"><?php echo $this->Html->link('Admin Status', array('controller' => 'adminstatus', 'action' => 'admin_index')); ?></li>
-                        <li id="changeinfo"><?php echo $this->Html->link('Brokerage Status', array('controller' => 'brokeragestatus', 'action' => 'admin_index')); ?></li>
+                        <?php /*
+                        <li id="changeinfo"><?php echo $this->Html->link('Brokerage Status', array('controller' => 'brokeragestatus', 'action' => 'admin_index')); ?></li> */ ?>
                         <li id="changeinfo"><?php echo $this->Html->link('SMS Template', array('controller' => 'smstemplates', 'action' => 'admin_index')); ?></li>
-                        <li id="changeinfo"><?php echo $this->Html->link('Shopping Assistance', array('controller' => 'shoppingassistance', 'action' => 'admin_index')); ?></li>
+                        <?php /* <li id="changeinfo"><?php echo $this->Html->link('Shopping Assistance', array('controller' => 'shoppingassistance', 'action' => 'admin_index')); ?></li> */ ?>
                        </ul>
                     </li>
 					
@@ -238,25 +240,25 @@
                    </ul>   
                    
                      <?php  
-                   $price=array('price');
-                    if(in_array($this->params['controller'],$price)):$current='class="active"';else:$current='';endif;
-                      echo '<li '.$current.'><a href="#">Price Mgnt</a>'
-					
-					  ;?>		
+                          $price=array('price');
+                          if(in_array($this->params['controller'],$price)):
+                              $current='class="active"';
+                          else:
+                            $current='';
+                          endif;
+                          echo '<li '.$current.'><a href="#">Price Mgnt</a>';
+                      ?>		
                     
                       <ul>  
-                        <li id="changeinfo"><?php echo $this->Html->link('Price',array('controller'=>'prices','action'=>'admin_index'));?></li>
+                        <?php /* <li id="changeinfo"><?php echo $this->Html->link('Price',array('controller'=>'prices','action'=>'admin_index'));?></li> */ ?>
                         <li id="changeinfo"><?php echo $this->Html->link('Gold Price',array('controller'=>'goldprice','action'=>'admin_index'));?></li>
-                       
-                   
-                   </ul>     
+                      </ul>
                             
-                            <li><a href="#">Brokerage</a>     
-                            <ul>  
-                                <li id="changeinfo"><?php echo $this->Html->link(' Vendor Brokerage', array('controller' => 'orders', 'action' => 'admin_vendors_brokerage')); ?></li>
-                                <li id="changeinfo"><?php echo $this->Html->link('Franchise Brokerage', array('controller' => 'orders', 'action' => 'admin_franchisee_brokerage')); ?></li>
-
-                            </ul>
+                        <li><a href="#">Brokerage</a>     
+                        <ul>  
+                            <li id="changeinfo"><?php echo $this->Html->link(' Vendor Brokerage', array('controller' => 'orders', 'action' => 'admin_vendors_brokerage')); ?></li>
+                            <li id="changeinfo"><?php echo $this->Html->link('Franchise Brokerage', array('controller' => 'orders', 'action' => 'admin_franchisee_brokerage')); ?></li>
+                        </ul>
 							<?php 
 								$user=array('relationshipmanager');
 									if(in_array($this->params['controller'],$user)):$current='class="active"';else:$current='';endif;

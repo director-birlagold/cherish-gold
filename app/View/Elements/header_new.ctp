@@ -5,7 +5,7 @@
 				<div class="container">
 					<div class="margin-5">
 						<div class="pull-left offer">
-							<a href="#">
+							<!-- <a href="#">
 								<span class=" offer-txt offers">OFFERS </span>
 							</a>
 							<span class="offer-txt">SAVE UPTO 
@@ -13,6 +13,10 @@
 							</span>
 							<a href="#">
 								<span class=" offer-txt shop-now">SHOP NOW</span>
+							</a> -->
+							<span class="offer-txt"> SUBSCRIBE OUR NEW</span>
+							<a href="<?php echo BASE_URL; ?>">
+								<span class=" offer-txt offers">BGP PLAN</span>
 							</a>
 						</div>
 					</div>
@@ -381,7 +385,7 @@
 																											echo $this->Html->image('no-image.jpg', array('border' => 0, 'width' => '170px', 'height' => '120'));
 																										}
 																									?>
-																									<?php echo strtoupper($prodcuts['Product']['product_name'])."<br/>₹ ".$total; ?> 
+																									<?php echo strtoupper($prodcuts['Product']['product_name'])."<br/>Rs. ".$total; ?> 
 																									
 																									</div>
 																								</a>
@@ -775,38 +779,34 @@
 										}
 									?>
 	
-									<li class="parent">
-									<p class="plus visible-xs">+</p>			<a href="#">OFFERS</a>
-									<div class="dropdown dropdown-menu drop-grid-6-1">
-									<div class="menu-row row-col-1" >
-									<div class="menu-column row-grid-1">
-									<!-- category -->
-									<a href="index3dd5.html?route=product/category&amp;path=175" class="parent">
-									Offers &amp; Discounts								</a>
-									<ul class="column category">
-									<li class="col-grid-1 ">
-									<a href="indexd03e.html?route=product/category&amp;path=176">
-									27% Discount										</a>
-									</li>
-									<li class="col-grid-1 ">
-									<a href="indexba55.html?route=product/category&amp;path=178">
-									Diamond Offer										</a>
-									</li>
-									<li class="col-grid-1 ">
-									<a href="indexe930.html?route=product/category&amp;path=177">
-									Flat 10% off										</a>
-									</li>
-									<li>
-									<a href="index3dd5.html?route=product/category&amp;path=175">
-									<div class="view_all_category">
-									VIEW ALL										</div>
-									</a>
-									</li> 
-									</ul>
-									</div>
-									</div>
-									</div>
-									</li>
+									<!-- <li class="parent">
+										<p class="plus visible-xs">+</p>
+										<a href="#">OFFERS</a>
+										<div class="dropdown dropdown-menu drop-grid-6-1">
+											<div class="menu-row row-col-1" >
+												<div class="menu-column row-grid-1">
+													<a href="index3dd5.html?route=product/category&amp;path=175" class="parent">Offers &amp; Discounts
+													</a>
+													<ul class="column category">
+														<li class="col-grid-1 ">
+															<a href="indexd03e.html?route=product/category&amp;path=176">27% Discount									</a>
+														</li>
+														<li class="col-grid-1 ">
+															<a href="indexba55.html?route=product/category&amp;path=178">Diamond Offer									</a>
+														</li>
+														<li class="col-grid-1 ">
+															<a href="indexe930.html?route=product/category&amp;path=177">Flat 10% off									</a>
+														</li>
+														<li>
+															<a href="index3dd5.html?route=product/category&amp;path=175">
+																<div class="view_all_category">VIEW ALL</div>
+															</a>
+														</li> 
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li> -->
 									<li class="parent">
 									<p class="plus visible-xs">+</p>			
 									<a href="#">PLAN</a>

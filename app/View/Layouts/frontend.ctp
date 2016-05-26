@@ -150,18 +150,26 @@
 		<!--End of Zopim Live Chat Script-->
 	</head>
 	<body class="common-home ">
-		
+		<?php /*
 		<div class="fixTab">
 			<div class="text">
-				<a href="http://cherishgold.com/index.php?route=common/home#shopping-assist">Shopping Assistant</a>
+			<?php if(isset($home_page)){
+					$link = "";
+				}else{
+
+				}
+			?>
+				<a href="<?php echo BASE_URL; ?>#shopping-assist">Shopping Assistant</a>
 			</div>
 		</div>
 		
 		
 			<div class="fixTab2">
 				<div class="text">
-					<a href="http://cherishgold.com/index.php?route=information/become-partner">Become a Partner</a></div></div>
-		
+					<a href="http://cherishgold.com/index.php?route=information/become-partner">Become a Partner</a>
+				</div>
+			</div>
+		*/ ?>
 		<div id="bt_loading">
 			<div class="bt-loading">
 				<?php echo $this->Html->image('/img/frontendTheme/catalog/cheshgold_logo_new.png',array("alt" =>"Loading...")); ?><br>
@@ -170,10 +178,10 @@
 		</div>
 		<div id="bt_container" class="bt-wide" >
 			<div class="home_default">
-				<?php echo $this->Element('header_new'); ?>
+				<?php echo $this->element('header_new'); ?>
 				<?php echo $content_for_layout; ?>
 			</div>
 		</div>
-		<?php echo $this->Element('footer_new'); ?>
+		<?php echo $this->element('footer_new'); ?>
 	</body>
 </html>

@@ -30,9 +30,7 @@
 				</div>
 			</article>
 		</div>
-<?php
-	}
-?>
+
 <script type="text/javascript"><!--
 jQuery(document).ready(function() {		
 	jQuery('.tp-banner0').show().revolution({
@@ -115,7 +113,9 @@ jQuery(document).ready(function() {
 //--></script>
 
 <!-- Banner End -->
-
+<?php
+	}
+?>
 <!-- Corousel satrt -->
 
 <?php
@@ -1264,7 +1264,7 @@ jQuery(document).ready(function() {
 	</div>
 <!-- New Arrival end -->
 <!-- Customer Speaks Start-->
-
+<?php /*
 	
   <!--  <div  style=" margin: 0 auto; height: auto;" class="customer_speak">-->
 			<!-- <div class="row"> -->
@@ -1272,7 +1272,7 @@ jQuery(document).ready(function() {
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="col-md-10" style="margin:auto; float:none;"></div>
 					<div class="col-md-12">
-<div class="uppercaseheading">CUSTOMERS SPEAK</div>
+						<div class="uppercaseheading">CUSTOMERS SPEAK</div>
 
 						
 
@@ -1445,11 +1445,10 @@ padding-top: 20px;
 		}
 		#tips li {
 			padding: 20px;
-			/*display: none;*/
 		}
 	</style>
 <!-- Customer speak end -->
-
+*/ ?>
 <div class="container customer_speak">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 not-animated" data-animate="fadeInUp" data-delay="300">
@@ -1475,7 +1474,7 @@ padding-top: 20px;
 						<div class="icon"><i class="fa fa-truck"><b>test</b></i></div>
 						<div class="text font_global">
 							<h4>FREE SHIPPING</h4>
-							<span>Free shipping on order over $1000</span>
+							<span>Free shipping on selected products</span>
 						</div>
 					</div>
 					<div class="block block-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">

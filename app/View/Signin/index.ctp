@@ -41,7 +41,7 @@ $( "#tabs2" ).tabs({
                                         <td width="400">
                                             <table cellpadding="0" cellspacing="0" border="0" width="100%" >
                                                 <tr>
-                                                    <td colspan="2">User ID / Email ID</td>
+                                                    <td colspan="2">Email Address</td>
                                                 </tr>
                                                 <tr><td colspan="2" height="10"></td></tr>
                                                 <tr>

@@ -28,6 +28,8 @@
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
+
+
 	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 Router::parseExtensions('xml');
 Router::connect('/', array('controller' => 'webpages', 'action' => 'index'));
@@ -58,6 +60,7 @@ Router::connect('/jewellery-care', array('controller' => 'staticpages', 'action'
 Router::connect('/site-map', array('controller' => 'staticpages', 'action' => 'staticpage'));
 Router::connect('/locate-out-outlet', array('controller' => 'staticpages', 'action' => 'staticpage'));
 Router::connect('/how-to-identify-fake-jewellery', array('controller' => 'staticpages', 'action' => 'staticpage'));
+Router::connect('/bgp-plan', array('controller' => 'staticpages', 'action' => 'staticpage'));
 Router::connect('/account-details', array('controller' => 'staticpages', 'action' => 'staticpage'));
 Router::connect('/jewellery', array('controller' => 'webpages', 'action' => 'jewellery'));
 Router::connect('/orders/delete/*', array('controller' => 'orders','action'=>'delete'));

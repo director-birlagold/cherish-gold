@@ -47,8 +47,8 @@ class AppController extends Controller {
 
 	public function beforeRender() {
 //		define('BASE_URL','/cherishgold/');
-
 		$price = $this->Price->find('first', array('conditions' => array('type' => "Metals", 'metal_id ' => 1, 'metalcolor_id' => 2,'metal_fineness' => '995')));
+        //pr($price); die;
 		$price['Price']['price'] = ($price['Price']['price'] * 92) / 100;
 		$this->Session->write("gold",$price['Price']['price']);
 	}

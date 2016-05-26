@@ -779,9 +779,9 @@
                             }
                             
                             //added by prakash
-                            $('.hidden_div').each(function(){
+                            /*$('.hidden_div').each(function(){
                                 calprice($(this).data('productid'));
-                            });
+                            }); */
 
 
                         }

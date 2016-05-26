@@ -77,11 +77,7 @@ define('INVOICE_STR_PAD','7');
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more
  * advanced ways of loading plugins
- * /**
-  
-
-
-
+ * **/
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
  *
@@ -100,8 +96,9 @@ define('INVOICE_STR_PAD','7');
  * ));
  */
 
- CakePlugin::loadAll(); // Loads all plugins at once
+ //CakePlugin::loadAll(); // Loads all plugins at once
 // CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
+ CakePlugin::load('Cherishws');
  
  
 Configure::write('Dispatcher.filters', array(
@@ -123,3 +120,4 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+Configure::load('appconfig');
